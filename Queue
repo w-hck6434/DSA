@@ -1,0 +1,46 @@
+class MyQueue {
+public:
+    int ar[1000];
+    int size=1000;
+    int temp, pos;
+    MyQueue() {
+        temp=0;
+        pos=0;
+    }
+    void push(int x) {
+        if(pos==size)
+        return;
+        ar[pos]=x;
+        pos++;
+    }
+    
+    int pop() {
+        if(!empty())
+        {
+            int x=ar[temp];
+            temp++;
+            return x;
+        }
+        return 0;
+    }
+    
+    int peek() {
+        int x=temp;
+        return ar[x];
+    }
+    
+    bool empty() {
+        if(temp==pos)
+        return true;
+        return false;
+    }
+};
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue* obj = new MyQueue();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->peek();
+ * bool param_4 = obj->empty();
+ */
